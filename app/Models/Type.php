@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Parameter extends Model
+class Type extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['type_id', 'value'];
 }
