@@ -13,7 +13,7 @@ class StoreParameterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreParameterRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            't' => 'required_without_all:p,v|numeric',
+            'p' => 'required_without_all:t,v|numeric',
+            'v' => 'required_without_all:p,t|numeric',
         ];
     }
 }

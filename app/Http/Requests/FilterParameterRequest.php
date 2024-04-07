@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateParameterRequest extends FormRequest
+class FilterParameterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class UpdateParameterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class UpdateParameterRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'start_dt'  => 'required|date',
+            'end_dt'    => 'required|date',
+            'type'      => 'required|in:t,p,v',
         ];
     }
 }

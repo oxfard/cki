@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ParameterController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::group(['prefix' => 'v1', 'as' => 'v1.'], function () {
-//    Route::post('/parameters', [ParameterController::class, 'store']);
-//    // роут для конкретного параметра никому не нужен. Нужен фильтр по типу запериод
-//    Route::get('/parameters/{parameter}', [ParameterController::class, '']);
-//});
+Route::group(['prefix' => 'v1'], function () {
+    Route::get('/parameters', [ParameterController::class, 'filter']);
+    Route::post('/parameters', [ParameterController::class, 'store']);
+});
 
-Route::apiResource('parameters', ParameterController::class);
+
