@@ -82,3 +82,12 @@ POST http://cki.loc/api/v1/parameters?p=67.9
 GET http://cki.loc/api/v1/parameters?start_dt=2024-04-07 00:38:12&end_dt=2024-06-01&type=p
 ```
 Обязательно указать тип датчика и обе крайние даты
+
+### Развертывание с помощью Docker
+Заполняем данные коннекта к бд в .env
+
+Затем:
+```
+docker-compose build app
+docker-compose up -d
+```
