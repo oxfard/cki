@@ -20,6 +20,8 @@ services:
     image: mysql:5.7
     container_name: cki-db
     restart: unless-stopped
+    ports:
+      - "3307:3306"
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
